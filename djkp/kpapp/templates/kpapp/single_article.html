@@ -1,0 +1,23 @@
+{% extends 'kpapp/base.html' %}
+{% block content %}
+
+	
+<div class="col-md-6">
+	<div class="post">
+		<h1 ><a style="font-family: cursive;
+    font-size: 45px;" href="#">{{ singlePost.title }}</a>
+				  </h1>
+				  <h1 style="text-align: right;
+    font-size: 40px;
+    font-family: fantasy;
+    color: teal;"> - {{singlePost.author}}</h1>
+				  <div class="date" style="text-align: right;
+    font-family: cursive;">
+						{{ singlePost.published_date }}
+				  </div>
+				  <p>{{ singlePost.text }}</p>
+				 </div>
+			
+				</div>
+			  <!--  <div class="col-md-3"></div> -->
+{% endblock %}	  

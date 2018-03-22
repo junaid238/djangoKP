@@ -1,0 +1,20 @@
+{% extends 'kpapp/base.html' %}
+{% block content %}
+
+	
+				<div class="col-md-6">
+				{% for eachArticle in articles %}
+				 <div class="post">
+				
+				  <h1>
+				  	<a href="{% url 'single_article' pk=eachArticle.pk %}">{{ eachArticle.title }}</a>
+				  </h1>
+				  <div class="date">
+						{{ eachArticle.published_date }}
+				  </div>
+				  <p>{{ eachArticle.text }}</p>
+				 </div>
+				{% endfor %}
+				</div>
+			  <!--  <div class="col-md-3"></div> -->
+{% endblock %}	  

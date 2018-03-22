@@ -1,0 +1,83 @@
+Python 
+------
+python.org --> download --> run 
+unix / mac --> pre built --> 2.7
+linux --> yum install python , sudo apt-get python
+
+local --> c/programs/program files/python36
+									--> run local
+								--> error
+							-> error
+		--> run --> global
+cmd --> python --> error --> local
+			   --> >>>   --> global
+my computer --> rt click --> properties --> adv sys stn --> --> env vars --> sys vars --> path --> new
+							--> edit --> c/programs/program files/python36;
+							--> delete
+apply --> save --> save --> ok 
+cmd --> python --> >>> 
+------------------------------------------------------------------
+Features 
+--------
+open source 
+interpreted langugage
+dynamically typed
+easy syntaxes 
+strict indentation rules 
+
+compiled	 vs interpreted
+c cpp java      php python ruby 
+
+---1----
+----50---
+-----100--
+errors -> 1 13 19
+
+compiled --> compile --> errors at 1 13 19 --> fix 3 --> compile --> errorless --> run -->o/p
+interpreted --> run --> error at 1 --> fix 1 --> run --> error at 13 --> fix 13 ...... --> errorless -> o/p
+
+int a = 10
+a = 10 
+
+syntax --> grammar of code
+indentation --> mandatory
+------------------------------------------------------------------
+IDLE --> cmd for python --> exec
+editors --> sublime text 3 --> writing 
+IDE --> pycharm CE --> exec + writing
+
+cmd --> python
+>>> ___ code ___ 
+
+demo.py --> run 
+cmd ---> python demo.py
+------------------------------------------------------------------
+Variables 
+---------
+small data buckets --> store data 
+data --> any data 
+	1 name --> identifier
+	2 memory 
+	3 value 
+keywords and identifier 
+
+import keyword
+print(keyword.kwlist)
+
+no start number 
+no start symbol
+spaces no 
+no underscore also
+small case .. camel case 
+------------------------------------------------------------------
+a = 10 
+a -> identifier
+10 -> value type()
+?? -> memory / path id()
+
+>>> a = 10
+>>> type(a)
+<class 'int'>
+>>> id(a)
+4465384336
+------------------------------------------------------------------
