@@ -1,0 +1,10 @@
+{% extends 'kpapp/base.html' %}
+{% block content %}
+{% for school in data%}
+<div class="col-md-6">
+	<h1 ><a style="font-family: cursive;
+    font-size: 45px;" href="#">{{ school }}</a>
+    <!-- <h1>{{school.estd}}</h1> -->
+</div>
+{%endfor%}
+{% endblock %}	
