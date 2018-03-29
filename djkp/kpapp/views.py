@@ -1,14 +1,21 @@
 from django.shortcuts import render,get_object_or_404
 from django.http import HttpResponse ,HttpResponseRedirect
-from .models import Article , Schools
+from .models import Article , Schools ,Student_obj
 from django.contrib.auth.models import User
 from django.views import View
-from .forms import NameForm
+from .forms import NameForm 
 from bs4 import BeautifulSoup	
 import requests
+from .forms import ArticleForm
+from .forms import DemoForm
+from django.utils import timezone
+from rest_framework_swagger.views import get_swagger_view
+
+schema_view = get_swagger_view(title='DigitalLync API')
+
+
 def first_method(request):
 	# return HttpResponse("Hello people")
-	
 	url = "https://www.forbes.com/sites/danielnewman/2018/01/16/top-18-tech-trends-at-ces-2018/#4dfeb833452f"
 	page = requests.get(url)
 	slashparts = url.split('/')
@@ -57,9 +64,40 @@ def get_name(request):
 	if request.method == 'POST':
 		form = NameForm(request.POST)
 		if form.is_valid():
+			student = form.save(commit=False)
+			student.save()
+
 			htm = "<html><head><title>Thanks </title></head><body><center >Thanks </center></body></html>"
 			return HttpResponse(htm)
+		else:
+			return HttpResponse("wrong")	
 	else:
 		form = NameForm()
 
 	return render(request, 'kpapp/name_form.html', {'form': form})
+
+def add_new(request):
+	if request.method == "POST":
+		form = ArticleForm(request.POST)
+		if form.is_valid():
+			post = form.save(commit=False)
+			post.author = request.user
+			post.published_date = timezone.now()
+			post.save()
+			return HttpResponse('Thanks for posting')
+	else:
+		form = ArticleForm()
+	return render(request, 'kpapp/add_article.html', {'form': form})
+
+def demo(request):
+	if request.method == "POST":
+		form = DemoForm(request.POST)
+		if form.is_valid():
+			emp = form.save(commit=False)
+			
+			return HttpResponse('Thanks for posting')
+
+	else:
+		form = DemoForm()
+	return render(request, 'kpapp/employee.html', {'form': form})
+

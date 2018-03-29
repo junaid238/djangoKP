@@ -1,8 +1,22 @@
-<form action="/name_form/" method="post">
+{% extends 'kpapp/base.html' %}
+
+{% block content %}
+    <h1>New post</h1>
+    <form method="POST" class="post-form">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="save btn btn-default">Save</button>
+    </form>
+{% endblock %}
+
+
+<!-- <form action="/name_form/" method="post">
     {% csrf_token %}
     <label for="your_name">Your name: </label>
     <input id="your_name" type="text" name="your_name" value="{{ current_name }}">
     
+    {{form.as_p}}
     <input type="submit" value="Submit" />
 </form>
 
+ -->

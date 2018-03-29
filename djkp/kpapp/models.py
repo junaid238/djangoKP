@@ -1,6 +1,5 @@
 from django.db import models
 from django.utils import timezone
-
 # Create your models here.
 #syntax my_field_name = models.CharField(max_length=20, help_text="Enter field documentation")
 
@@ -17,7 +16,12 @@ class Article(models.Model):
 	def __str__(self):
 		return self.title
 
-
+class Student_obj(models.Model):
+    created_date = models.DateTimeField(
+			default=timezone.now)
+    name = models.CharField(max_length=200)
+    def __str__(self):
+        return self.name
 
 class Schools(models.Model):
 	name = models.CharField(max_length=30)
