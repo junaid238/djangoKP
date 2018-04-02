@@ -11,6 +11,9 @@ from .forms import DemoForm
 from django.utils import timezone
 from rest_framework_swagger.views import get_swagger_view
 
+from django.views.generic.list import ListView
+
+
 schema_view = get_swagger_view(title='DigitalLync API')
 
 
@@ -101,3 +104,10 @@ def demo(request):
 		form = DemoForm()
 	return render(request, 'kpapp/employee.html', {'form': form})
 
+class ArticleListview(ListView):
+	# def __init__(self, arg):
+	# 	super(Listview, self).__init__()
+	# 	self.arg = arg
+	model = Article
+
+		

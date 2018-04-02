@@ -1,7 +1,7 @@
 #from django.conf.urls import path
 from django.conf.urls import url
 from . import views
-from kpapp.views import ClassBV
+from kpapp.views import ClassBV , ArticleListview
 urlpatterns = [
 	# url(r'^$' , views.first_method , name = 'first_method'),
 	url(r'^$' , views.schema_view ),
@@ -12,4 +12,6 @@ urlpatterns = [
 	url(r'cbv' , ClassBV.as_view() , name = 'cbv'),
 	url(r'^add_new/$', views.add_new, name='add_new'),
 	url(r'^demo/$', views.demo, name='demo'),
+	url(r'^listview/$', ArticleListview.as_view(), name='listview'),
+
 ]
