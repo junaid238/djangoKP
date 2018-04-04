@@ -4,7 +4,9 @@
 <h1>Articles</h1>
 <ul>
 {% for article in article_list %}
-    <li>{{ article }} 
+    <!-- <li>{{ article }}  -->
+    <li><a href="{% url 'single_article' pk=article.pk %}">{{article.title}}    </a>
+    	<!-- <p>{{now}}</p> -->
 {% endfor %}
 </ul>
 

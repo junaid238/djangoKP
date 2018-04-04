@@ -7,7 +7,7 @@
 				 <div class="post">
 				
 				  <h1>
-				  	<a href="{% url 'single_article' pk=eachArticle.pk %}">{{ eachArticle.title }}</a>
+				  	<a href="{% url 'single_article' pk=eachArticle.pk %}">{{ eachArticle.title }}{{user}}</a>
 				  </h1>
 				  <div class="date">
 						{{ eachArticle.published_date }}

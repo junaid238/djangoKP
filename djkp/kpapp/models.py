@@ -16,12 +16,14 @@ class Article(models.Model):
 	def __str__(self):
 		return self.title
 
-class Student_obj(models.Model):
-    created_date = models.DateTimeField(
-			default=timezone.now)
-    name = models.CharField(max_length=200)
-    def __str__(self):
-        return self.name
+# class Student_obj(models.Model):
+# 	created_date = models.DateTimeField(
+# 			default=timezone.now)
+# 	name = models.CharField(max_length=200)
+# 	roll_no = models.IntegerField()
+# 	resume = models.FileField(upload_to='documents/')
+# 	def __str__(self):
+# 		return self.name
 
 class Schools(models.Model):
 	name = models.CharField(max_length=30)

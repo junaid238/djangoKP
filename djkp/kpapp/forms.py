@@ -1,5 +1,5 @@
 from django import forms
-from .models import Article , Student_obj
+from .models import Article 
 STATUS_CHOICES = (
     (1, ("employed")),
     (2, ("not employed")),
@@ -15,15 +15,11 @@ EMP_STATUS = (
     ( 4, ("BA")),
     ( 5, ("others"))
 )
-class NameForm(forms.ModelForm):
-	class Meta:
-		model = Student_obj
-		fields = ('name', )
-	your_name = forms.CharField(label='Your name', max_length=100)
-	status = forms.ChoiceField(choices = STATUS_CHOICES, label="", initial='', widget=forms.Select(), required=True)
-	date = forms.DateTimeField()
-	roll_no = forms.DecimalField()
-	resume = forms.FileField()
+# class NameForm(forms.ModelForm):
+# 	class Meta:
+# 		model = Student_obj
+# 		fields = ('name',"resume" , 'roll_no' )
+	
 
 class DemoForm(forms.Form):
 	employee = forms.CharField(label='Your name', max_length=100)
